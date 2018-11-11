@@ -15,16 +15,7 @@
   position: relative;
   background: #f6f9fc;
   padding: 11px 14px 11px 40px;
-  cursor: pointer;
   transition: background 0.2s ease-in-out;
-}
-
-.accordion-field__title {
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .accordion-field__instruct {
@@ -59,10 +50,10 @@
 }
 
 /** Overall styles when the accordion is open */
-.accordion-field--open > .accordion-field__body {
+.accordion-field--open .accordion-field__body {
   max-height: none;
 }
 
-.accordion-field--open > .accordion-field__header::before {
+.accordion-field--open .accordion-field__header::before {
   transform: rotate(45deg);
 }

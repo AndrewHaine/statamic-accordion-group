@@ -8,15 +8,20 @@ Vue.component("accordion_group-fieldtype", {
         'accordion-field': true,
         'accordion-field--open': isOpen
       }">
-      <div v-on:click="handleClick" class="accordion-field__header">
-        <div v-if="loading" class="loading loading-basic">
+      <div v-on:click="handleClick" class="accordion-field__header no-select clickable">
+        <div v-if="config.child_fieldset">
           <div v-if="loading" class="loading loading-basic">
             <span class="icon icon-circular-graph animation-spin"></span> {{ translate('cp.loading') }}
           </div>
+          <div v-else>
+            <span class="accordion-field__title">{{ config.display }}</span>
+            <small v-if="config.instructions" v-html="config.instructions | markdown" class="accordion-field__instruct"></small>
+          </div>
         </div>
         <div v-else>
-          <span class="accordion-field__title">{{ config.display }}</span>
-          <small v-if="config.instructions" v-html="config.instructions | markdown" class="accordion-field__instruct"></small>
+          <div class="loading loading-basic red">
+            <span class="icon icon-block"></span> No fieldset has been set for this group.
+          </div>
         </div>
       </div>
       <div class="accordion-field__body">
@@ -83,7 +88,7 @@ Vue.component("accordion_group-fieldtype", {
     fieldClasses(field) {
       return [
         "form-group",
-        field.type + "-fieldtype",
+        this.fieldtypeClass,
         tailwind_width_class(field.width),
         field.classes || ""
       ];
