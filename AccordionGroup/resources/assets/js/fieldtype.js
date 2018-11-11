@@ -88,7 +88,7 @@ Vue.component("accordion_group-fieldtype", {
     fieldClasses(field) {
       return [
         "form-group",
-        this.fieldtypeClass,
+        field.type + "-fieldtype",
         tailwind_width_class(field.width),
         field.classes || ""
       ];
