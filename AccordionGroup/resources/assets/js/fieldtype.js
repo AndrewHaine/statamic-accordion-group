@@ -40,7 +40,7 @@ Vue.component("accordion_group-fieldtype", {
 
                   <component
                     :is="componentName(field.type)"
-                    :name="name + '.' + index + '.' + field.name"
+                    :name="name + '.' + field.name"
                     :config="field"
                     :data.sync="data[field.name]"
                   ></component>
