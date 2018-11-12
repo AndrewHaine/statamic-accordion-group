@@ -50,10 +50,10 @@
 }
 
 /** Overall styles when the accordion is open */
-.accordion-field--open .accordion-field__body {
+.accordion-field--open > .accordion-field__body {
   max-height: none;
 }
 
-.accordion-field--open .accordion-field__header::before {
+.accordion-field--open > .accordion-field__header::before {
   transform: rotate(45deg);
 }
