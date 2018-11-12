@@ -23,7 +23,7 @@ fields:
     child_fieldset: metadata
 ```
 
-![Example metadata field in CP](docs/img/statamic-accordion-group-cp-xmpl.gif)
+![Example metadata field in CP](https://raw.githubusercontent.com/AndrewHaine/statamic-accordion-group/master/docs/img/statamic-accordion-group-cp-xmpl.gif)
 
 ## How do I use this in my templates?
 
