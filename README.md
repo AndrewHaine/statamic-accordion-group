@@ -4,7 +4,7 @@ Stash groups of fields from long fieldsets away in accordion-style toggle boxes.
 
 ## Installation
 
-To install this fieldtype, download the addon files from the Statamic marketplace and place the `AccordionGroup` folder in your `site/addons` directory. You should then be able to add 'Accordion Group' fields to your fieldsets.
+To install this fieldtype, download the addon files from the [Statamic marketplace](https://statamic.com/marketplace/addons/accordion-group) and place the `AccordionGroup` folder in your `site/addons` directory. You should then be able to add 'Accordion Group' fields to your fieldsets.
 
 ## Setting up fieldsets
 
