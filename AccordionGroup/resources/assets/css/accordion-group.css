@@ -47,7 +47,6 @@
 /** Main form body class */
 .accordion-field__body {
   max-height: 0;
-  overflow: hidden;
   background: #fff;
 }
 

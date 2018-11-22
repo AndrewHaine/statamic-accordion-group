@@ -4,10 +4,7 @@ Vue.component("accordion_group-fieldtype", {
   props: ["data", "config", "name"],
 
   template: ` <div>
-    <section v-bind:class="{
-        'accordion-field': true,
-        'accordion-field--open': isOpen
-      }">
+    <section class='accordion-field' v-bind:class="{ 'accordion-field--open': isOpen }">
       <div v-on:click="handleClick" class="accordion-field__header no-select clickable">
         <div v-if="config.child_fieldset">
           <div v-if="loading" class="loading loading-basic">
@@ -24,7 +21,7 @@ Vue.component("accordion_group-fieldtype", {
           </div>
         </div>
       </div>
-      <div class="accordion-field__body">
+      <div class="accordion-field__body" v-bind:class="{ 'invisible': !isOpen }">
         <div v-if="child_fields.length" class="accordion-field__fieldset publish-fields">
             <div v-for="field in child_fields" :class="fieldClasses(field)">
               <div class="field-inner">
