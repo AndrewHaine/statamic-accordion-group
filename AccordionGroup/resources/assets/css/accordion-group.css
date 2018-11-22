@@ -1,6 +1,7 @@
 /** Remove the default field labels */
 .form-group.accordion_group-fieldtype > .field-inner > label.block,
-.form-group.accordion_group-fieldtype > .field-inner > small.help-block {
+.form-group.accordion_group-fieldtype > .field-inner > small.help-block,
+.form-group.accordion_group-fieldtype > small.help-block {
   display: none !important;
 }
 
@@ -47,6 +48,7 @@
 .accordion-field__body {
   max-height: 0;
   overflow: hidden;
+  background: #fff;
 }
 
 /** Overall styles when the accordion is open */
