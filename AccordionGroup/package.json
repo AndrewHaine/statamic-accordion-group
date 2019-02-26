@@ -1,0 +1,15 @@
+{
+  "name": "statamic-accordion-group",
+  "private": true,
+  "main": "webpack.mix.js",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^4.0.14",
+    "vue-template-compiler": "^2.6.7"
+  }
+}
