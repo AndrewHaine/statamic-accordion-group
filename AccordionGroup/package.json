@@ -13,6 +13,7 @@
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^8.7.1",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.7"
+    "vue-template-compiler": "^2.6.7",
+    "webpack-dev-server": "^3.2.1"
   }
 }
