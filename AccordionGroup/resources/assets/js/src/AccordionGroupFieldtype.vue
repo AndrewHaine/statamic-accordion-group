@@ -53,7 +53,46 @@
 </template>
 
 <script>
-import Fieldset from "../../../../../../../statamic/resources/js/components/publish/Fieldset";
+/** Fieldset parser present at "../../../../../../statamic/resources/js/components/publish/Fieldset.js" */
+class Fieldset {
+  constructor(fieldset) {
+    this.fieldset = fieldset;
+    this.name = fieldset.name;
+    this.sections = this.parseSections(fieldset.sections);
+    this.metaFields = [];
+  }
+
+  parseSections(sections) {
+    return _.chain(sections)
+      .mapObject((section, handle) => {
+        section.handle = handle;
+        section.fields = this.parseFields(section.fields);
+        return section;
+      })
+      .values()
+      .value();
+  }
+
+  parseFields(fields) {
+    return _.chain(fields)
+      .mapObject((config, handle) => {
+        config.name = handle;
+        return config;
+      })
+      .values()
+      .value();
+  }
+
+  /**
+   * Get all the fields from all the sections.
+   */
+  fields() {
+    return _.chain(this.sections)
+      .pluck("fields")
+      .flatten()
+      .value();
+  }
+}
 
 export default {
   mixins: [Fieldtype],
@@ -65,6 +104,7 @@ export default {
       .get(cp_url(`fieldsets-json/${this.config.child_fieldset}`))
       .success(response => {
         const child_fieldset = new Fieldset(response);
+        this.fieldset = child_fieldset;
         this.child_fields = child_fieldset.fields();
 
         this.loading = !true;
@@ -77,6 +117,7 @@ export default {
     return {
       autoBindChangeWatcher: false,
       child_fields: [],
+      fieldset: {},
       isOpen: false,
       loading: true
     };
